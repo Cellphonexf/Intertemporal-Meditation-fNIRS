@@ -1,0 +1,11 @@
+Hi, welcome to my Github page for code back up related to our research project 'Intertemporal Meditation Regulates Time Perception and Emotions—An Exploratory fNIRS Study.'
+
+Here is a brief workflow for our analysis scheme:
+
+1. We analyzed and visualized the behavioral data (stored in 'Behavioral_data.xlsx' ) using the R script 'data_analysis_behavior.R'.  Four raw graphs including the 'time_pic.pdf,' 'intertemporal_emo_pic.pdf,' 'mindfulness_emo_pic.pdf,' and 'contrast_emo_pic.pdf' would be saved after running this script. We integrated these raw graphs into 'Fig. 3' via Adobe Illustrator.
+
+2. We analyzed and visualized the hemodynamic data (stored in folderfiles 'session 1,' 'session 2', and 'session 3') using the MATLAB script 'data_analysis_fnirs.m.' This script needs to be run in MATLAB (version R2017b) with toolboxes of Homer3. The Excel file 'fNIRS_participant_list.xlsx' recorded the information of included copies of data and the reasons for exclusion. Six raw graphs including the 'Pair2.pdf,' 'Pair4.pdf', 'Pair6.pdf,' 'Pair8.pdf,' 'Pair9.pdf,' and 'Pair10.pdf' would be saved in the folderfile of 'Figure5' after running this script. We integrated these raw graphs into 'Fig. 5' via Adobe Illustrator.
+
+3. We used another MATLAB script 'visualization_fnirs.m' with toolboxes of EasyTopo to visualize the brain maps in 'Fig. 4.' We extracted the statistical values (i.e., Cohen's d) for plotting and stored them into 'fNIRS_visualization.xlsx.' Three data files would be saved including the 'input_contrast1_data.mat,' input_contrast12_data.mat,' and ' input_contrast123_data.mat.' We visualized these data files using EasyTopo (for the usage, please refer to: 'EasyTopo 2.0 User Manual.pdf') and saved the brain maps (i.e., 'visualization_contrast1.eps,' 'visualization_contrast12.eps,' and 'visualization_contrast123.eps'). We integrated them into 'Fig. 4' via Adobe Illustrator.
+
+4. We also provided the spatial registration results in two files of 'SpatialRegistration_BA.txt' and 'SpatialRegistration_MNI.txt.'
