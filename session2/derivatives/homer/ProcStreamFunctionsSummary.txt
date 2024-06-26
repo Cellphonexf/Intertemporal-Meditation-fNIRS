@@ -1,0 +1,720 @@
+Application Name :   Homer3, (v1.80.2)
+Date/Time        :   Ò»ÔÂ 21, 2024,   16:02:39
+
+
+
+----------
+06.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+10.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+11.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+15.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+16.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+17.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+18.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+19.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+20.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+21.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+22.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+23.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+24.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+26.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+27.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+29.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+32.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+33.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+34.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+35.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+36.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+37.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+38.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+40.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+41.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+42.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+43.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+44.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+45.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+46.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+47.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+48.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+50.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+51.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+52.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+53.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+54.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+55.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+56.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+57.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+58.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+59.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+60.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+61.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+62.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+63.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+64.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+65.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+66.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+67.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+68.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+69.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+70.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+71.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
+----------
+72.snirf :
+----------
+mlActAuto = hmrR_PruneChannels(data, probe, mlActMan, tIncMan, [1e-02 1e+00], 2, [25.0 40.0]);
+dod = hmrR_Intensity2OD(data);
+[tIncAuto, tIncAutoCh] = hmrR_MotionArtifactByChannel(dod, probe, mlActMan, mlActAuto, tIncMan, 0.5, 1.0, 5.0, 0.05);
+dod = hmrR_MotionCorrectWavelet(dod, mlActMan, mlActAuto, 1.50, 1);
+dod = hmrR_BandpassFilt(dod, 0.000, 0.080);
+dc = hmrR_OD2Conc(dod, probe, [1.0 1.0]);
+dc = hmrR_MotionCorrectCbsi(dc, mlActAuto, 1);
+[dcAvg, dcAvgStd, nTrials, dcSum2] = hmrR_BlockAvg(dc, stim, [-15.0 60.0]);
+
+
