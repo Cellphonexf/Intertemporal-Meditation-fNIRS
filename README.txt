@@ -1,4 +1,4 @@
-##Intertemporal Meditation Regulates Time Perception and Emotions—An Exploratory fNIRS Study##
+##Intertemporal Meditation Regulates Time Perception and Emotions: An Exploratory fNIRS Study##
 
 Welcome to the GitHub repository for our research project. This repository contains the code and data used in our study.
 
