@@ -1,9 +1,12 @@
 %% fNIRS data analysis
 %% Required to run in MATLAB version R2017b
 %% Required to load Homer3 processed data files
-%% Programmed by Feng Xiao (2024.6.25)
+%% Programmed by Feng Xiao (2025.5.18)
 clear all,
 clc,
+%% If ttest function fail
+rmpath(genpath('D:\fNIRSanalysis\spm8\external\fieldtrip'))
+rehash toolboxcache
 %% Parameter settings
 samplingrate = 5.1;
 Channels = 1:36;
@@ -59,6 +62,54 @@ HbO_intertemporal = [];
 end
 
 clear subj_mindfulness_hbo subj_intertemporal_hbo HbO_mindfulness HbO_intertemporal
+
+nSubj = size(subj, 2);      
+nChan = length(Channels);   
+mindfulness_avg = zeros(nSubj, nChan);
+intertemporal_avg = zeros(nSubj, nChan);
+
+for j = 1:nSubj %calculate the average amplitude of HbO for each participant for each channel across 300s
+    for i = 1:nChan
+        col_idx = i + nChan * (j - 1);
+        m_data = ses1_mindfulness_hbo(:, col_idx);
+        i_data = ses1_intertemporal_hbo(:, col_idx);
+        if any(m_data) 
+            mindfulness_avg(j, i) = mean(m_data);
+        end
+        if any(i_data)
+            intertemporal_avg(j, i) = mean(i_data);
+        end
+    end
+end
+
+nonzero_cols = any(mindfulness_avg ~= 0, 1) & any(intertemporal_avg ~= 0, 1);
+valid_mindfulness = mindfulness_avg(:, nonzero_cols); %prune invalid channels
+valid_intertemporal = intertemporal_avg(:, nonzero_cols);
+
+data_all = [valid_mindfulness; valid_intertemporal]; % [2n x valid_channels], MANOVA matrix
+group = [repmat({'Mindfulness'}, nSubj, 1); repmat({'Intertemporal'}, nSubj, 1)];
+
+[~, p_manova, stats_manova] = manova1(data_all, group); %repeated measure of MANOVA
+disp(['MANOVA p-value = ' num2str(p_manova)]) %p=.939
+disp(['Valid channels retained for MANOVA: ' num2str(sum(nonzero_cols))]) %26
+
+R_m = corr(valid_mindfulness);        % Mindfulness condition
+R_i = corr(valid_intertemporal);      % Intertemporal condition
+
+lower_tri_m = tril(R_m, -1); % Extract lower triangle (excluding diagonal) for summary stats
+lower_tri_i = tril(R_i, -1);
+r_vals_m = lower_tri_m(lower_tri_m ~= 0);
+r_vals_i = lower_tri_i(lower_tri_i ~= 0);
+
+mean_r_m = mean(r_vals_m); % Report average inter-channel correlation
+std_r_m = std(r_vals_m);
+mean_r_i = mean(r_vals_i);
+std_r_i = std(r_vals_i);
+
+disp('===============================')
+disp('Session 1 Inter-channel Correlations')
+disp(['Mindfulness condition: mean r = ' num2str(mean_r_m, '%.3f') ', SD = ' num2str(std_r_m, '%.3f')]) % mean r = 0.259, SD = 0.288
+disp(['Intertemporal condition: mean r = ' num2str(mean_r_i, '%.3f') ', SD = ' num2str(std_r_i, '%.3f')]) % mean r = 0.267, SD = 0.249
 
 Ses1_mindfulness_hbo = [];
 Ses1_intertemporal_hbo = [];
@@ -205,6 +256,54 @@ end
 
 clear subj_mindfulness_hbo subj_intertemporal_hbo HbO_mindfulness HbO_intertemporal
 
+nSubj = size(subj, 2);      
+nChan = length(Channels);   
+mindfulness_avg = zeros(nSubj, nChan);
+intertemporal_avg = zeros(nSubj, nChan);
+
+for j = 1:nSubj %calculate the average amplitude of HbO for each participant for each channel across 60s
+    for i = 1:nChan
+        col_idx = i + nChan * (j - 1);
+        m_data = ses2_mindfulness_hbo(:, col_idx);
+        i_data = ses2_intertemporal_hbo(:, col_idx);
+        if any(m_data) 
+            mindfulness_avg(j, i) = mean(m_data);
+        end
+        if any(i_data)
+            intertemporal_avg(j, i) = mean(i_data);
+        end
+    end
+end
+
+nonzero_cols = any(mindfulness_avg ~= 0, 1) & any(intertemporal_avg ~= 0, 1);
+valid_mindfulness = mindfulness_avg(:, nonzero_cols); %prune invalid channels
+valid_intertemporal = intertemporal_avg(:, nonzero_cols);
+
+data_all = [valid_mindfulness; valid_intertemporal]; % [2n x valid_channels], MANOVA matrix
+group = [repmat({'Mindfulness'}, nSubj, 1); repmat({'Intertemporal'}, nSubj, 1)];
+
+[~, p_manova, stats_manova] = manova1(data_all, group); %repeated measure of MANOVA
+disp(['MANOVA p-value = ' num2str(p_manova)]) %p=.394
+disp(['Valid channels retained for MANOVA: ' num2str(sum(nonzero_cols))]) %26
+
+R_m = corr(valid_mindfulness);        % Mindfulness condition
+R_i = corr(valid_intertemporal);      % Intertemporal condition
+
+lower_tri_m = tril(R_m, -1); % Extract lower triangle (excluding diagonal) for summary stats
+lower_tri_i = tril(R_i, -1);
+r_vals_m = lower_tri_m(lower_tri_m ~= 0);
+r_vals_i = lower_tri_i(lower_tri_i ~= 0);
+
+mean_r_m = mean(r_vals_m); % Report average inter-channel correlation
+std_r_m = std(r_vals_m);
+mean_r_i = mean(r_vals_i);
+std_r_i = std(r_vals_i);
+
+disp('===============================')
+disp('Session 2 Inter-channel Correlations')
+disp(['Mindfulness condition: mean r = ' num2str(mean_r_m, '%.3f') ', SD = ' num2str(std_r_m, '%.3f')]) % mean r = 0.216, SD = 0.294
+disp(['Intertemporal condition: mean r = ' num2str(mean_r_i, '%.3f') ', SD = ' num2str(std_r_i, '%.3f')]) % mean r = 0.298, SD = 0.303
+
 Ses2_mindfulness_hbo = [];
 Ses2_intertemporal_hbo = [];
 Ses2_mindfulness_hbo_se = [];
@@ -349,6 +448,54 @@ HbO_intertemporal = [];
 end
 
 clear subj_mindfulness_hbo subj_intertemporal_hbo HbO_mindfulness HbO_intertemporal 
+
+nSubj = size(subj, 2);      
+nChan = length(Channels);   
+mindfulness_avg = zeros(nSubj, nChan);
+intertemporal_avg = zeros(nSubj, nChan);
+
+for j = 1:nSubj %calculate the average amplitude of HbO for each participant for each channel across 60s
+    for i = 1:nChan
+        col_idx = i + nChan * (j - 1);
+        m_data = ses3_mindfulness_hbo(:, col_idx);
+        i_data = ses3_intertemporal_hbo(:, col_idx);
+        if any(m_data) 
+            mindfulness_avg(j, i) = mean(m_data);
+        end
+        if any(i_data)
+            intertemporal_avg(j, i) = mean(i_data);
+        end
+    end
+end
+
+nonzero_cols = any(mindfulness_avg ~= 0, 1) & any(intertemporal_avg ~= 0, 1);
+valid_mindfulness = mindfulness_avg(:, nonzero_cols); %prune invalid channels
+valid_intertemporal = intertemporal_avg(:, nonzero_cols);
+
+data_all = [valid_mindfulness; valid_intertemporal]; % [2n x valid_channels], MANOVA matrix
+group = [repmat({'Mindfulness'}, nSubj, 1); repmat({'Intertemporal'}, nSubj, 1)];
+
+[~, p_manova, stats_manova] = manova1(data_all, group); %repeated measure of MANOVA
+disp(['MANOVA p-value = ' num2str(p_manova)]) %p=.924
+disp(['Valid channels retained for MANOVA: ' num2str(sum(nonzero_cols))]) %26
+
+R_m = corr(valid_mindfulness);        % Mindfulness condition
+R_i = corr(valid_intertemporal);      % Intertemporal condition
+
+lower_tri_m = tril(R_m, -1); % Extract lower triangle (excluding diagonal) for summary stats
+lower_tri_i = tril(R_i, -1);
+r_vals_m = lower_tri_m(lower_tri_m ~= 0);
+r_vals_i = lower_tri_i(lower_tri_i ~= 0);
+
+mean_r_m = mean(r_vals_m); % Report average inter-channel correlation
+std_r_m = std(r_vals_m);
+mean_r_i = mean(r_vals_i);
+std_r_i = std(r_vals_i);
+
+disp('===============================')
+disp('Session 3 Inter-channel Correlations')
+disp(['Mindfulness condition: mean r = ' num2str(mean_r_m, '%.3f') ', SD = ' num2str(std_r_m, '%.3f')]) % mean r = 0.270, SD = 0.228
+disp(['Intertemporal condition: mean r = ' num2str(mean_r_i, '%.3f') ', SD = ' num2str(std_r_i, '%.3f')]) % mean r = 0.284, SD = 0.293
 
 Ses3_mindfulness_hbo = [];
 Ses3_intertemporal_hbo = [];

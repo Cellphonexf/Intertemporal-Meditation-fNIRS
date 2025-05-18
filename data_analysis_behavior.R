@@ -1,6 +1,6 @@
 #Behavioral data analysis & plotting
 #This script requires one data file:"Behavioral_data.xlsx"
-#Programmed by Feng XIAO (2024.6.25)
+#Programmed by Feng XIAO (2025.5.17)
 
 ###Preparation
 ##Load required packages for analysis
@@ -97,7 +97,7 @@ mean(time_pre_e$Time) #62.94
 sd(time_pre_e$Time) #22.03
 mean(time_post_e$Time) #50.23
 sd(time_post_e$Time) #23.47
-#Mindfulness vs. Intertemporal:
+#Mindfulness vs. Intertemporal: post
 t.test(time_post_p$Time,time_post_e$Time,paired=FALSE,
        alternative=c("two.sided"),
        var.equal=FALSE,
@@ -106,6 +106,18 @@ mean(time_post_p$Time) #51.18
 sd(time_post_p$Time) #29.97
 mean(time_post_e$Time) #50.23
 sd(time_post_e$Time) #23.47
+#Mindfulness vs. Intertemporal: post-pre
+change_p <- data.frame(SubjectNo = time_post_p$SubjectNo,
+                       Condition = "EP",
+                       Change = time_post_p$Time - time_pre_p$Time)
+change_e <- data.frame(SubjectNo = time_post_e$SubjectNo,
+                       Condition = "PE",
+                       Change = time_post_e$Time - time_pre_e$Time)
+change_combined <- rbind(change_p, change_e)
+t.test(Change ~ Condition, data = change_combined,
+       var.equal = FALSE, conf.level = 0.95) # p = .097
+aggregate(Change ~ Condition, data = change_combined, mean)
+aggregate(Change ~ Condition, data = change_combined, sd)
 
 ###Comparisons: mindfulness vs. intertemporal meditation
 ##Meditation involvement
@@ -186,6 +198,54 @@ sd(merge_relax$Relax.x) #24.51
 mean(merge_relax$Relax.y) #50.08
 sd(merge_relax$Relax.y) #27.95
 
+## Gender * Meditation type interaction for each emotion
+make_emo_df <- function(df, emotion_col, emotion_name) {
+  df$Emotion <- df[[emotion_col]]
+  df$EmotionType <- emotion_name
+  df[, c("SubjectNo", "Gender", "Meditation", "Emotion", "EmotionType")]
+}
+emo_dfs <- list(
+  make_emo_df(p_thrill, "Thrill", "Thrill"),
+  make_emo_df(e_thrill, "Thrill", "Thrill"),
+  make_emo_df(p_peace, "Peace", "Peace"),
+  make_emo_df(e_peace, "Peace", "Peace"),
+  make_emo_df(p_joy, "Joy", "Joy"),
+  make_emo_df(e_joy, "Joy", "Joy"),
+  make_emo_df(p_relax, "Relax", "Relax"),
+  make_emo_df(e_relax, "Relax", "Relax"),
+  make_emo_df(p_anxious, "Anxious", "Anxious"),
+  make_emo_df(e_anxious, "Anxious", "Anxious"),
+  make_emo_df(p_fear, "Fear", "Fear"),
+  make_emo_df(e_fear, "Fear", "Fear"),
+  make_emo_df(p_sad, "Sad", "Sad"),
+  make_emo_df(e_sad, "Sad", "Sad")
+)
+df_emo <- do.call(rbind, emo_dfs)
+df_emo$Meditation <- factor(df_emo$Meditation, levels = c("Present", "End-of-life"))
+df_emo$Gender <- factor(df_emo$Gender)
+df_emo$EmotionType <- factor(df_emo$EmotionType)
+#Thrill
+model_thrill <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Thrill"))
+summary(model_thrill)
+#Peace
+model_peace <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Peace"))
+summary(model_peace)
+#Joy
+model_joy <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Joy"))
+summary(model_joy)
+#Relaxation
+model_relax <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Relax"))
+summary(model_relax)
+#Anxiety
+model_anxiety <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Anxious"))
+summary(model_anxiety)
+#Fear
+model_fear <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Fear"))
+summary(model_fear)
+#Sadness
+model_sad <- lm(Emotion ~ Meditation * Gender, data = subset(df_emo, EmotionType == "Sad"))
+summary(model_sad)
+
 ### Comparisons of 7 emotional ratings after each meditation practices
 ## Intertemporal meditation
 emo_intertemporal <- data.frame(thrill = rd_end$Thrill, peace = rd_end$Peace, 
@@ -212,15 +272,19 @@ summary(emoMind_result) #F = 28.39, p < .001, eta square = 0.30
 postHoc_emoMind <- TukeyHSD(emoMind_result)
 print(postHoc_emoMind) #relaxation > peace > joy > thrill > anxiety > sadness > fear
 
-###Multiple regression analysis for time perception on emotional ratings
-##Intertemporal meditation
-pcdata_e <- merge(time_post_e, rd_end, by = 'SubjectNo')
-model_e <- lm(cbind(Thrill, Peace, Anxious, Joy, Fear, Sad, Relax) ~ Time, data = pcdata_e)
-summary(model_e) #time perception ~ fear: p = .035, R squared = 0.140
-##Mindfulness meditation
-pcdata_p <- merge(time_post_p, rd_present, by = 'SubjectNo')
-model_p <- lm(cbind(Thrill, Peace, Anxious, Joy, Fear, Sad, Relax) ~ Time, data = pcdata_p)
-summary(model_p) #NS
+###Multiple regression of emotional ratings on time perception change and meditation type
+change_p <- data.frame(SubjectNo = time_post_p$SubjectNo,
+                       Change = time_post_p$Time - time_pre_p$Time)
+pcdata_p <- merge(change_p, rd_present, by = "SubjectNo")
+change_e <- data.frame(SubjectNo = time_post_e$SubjectNo,
+                       Change = time_post_e$Time - time_pre_e$Time)
+pcdata_e <- merge(change_e, rd_end, by = "SubjectNo")
+pcdata_p$Condition <- "EP"  # Mindfulness second
+pcdata_e$Condition <- "PE"  # Intertemporal second
+pcdata_all <- rbind(pcdata_p, pcdata_e)
+pcdata_all$Condition <- factor(pcdata_all$Condition, levels = c("EP", "PE"))
+model_interact_all <- lm(cbind(Thrill, Peace, Anxious, Joy, Fear, Sad, Relax) ~ Change * Condition, data = pcdata_all)
+summary(model_interact_all)
 
 ###Plotting
 ##Time perception
