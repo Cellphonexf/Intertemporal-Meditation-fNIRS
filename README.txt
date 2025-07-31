@@ -1,4 +1,6 @@
-##Intertemporal Meditation Regulates Time Perception and Emotions: An Exploratory fNIRS Study##
+##Intertemporal Meditation Regulates Time Perception and Emotions—An Exploratory fNIRS Study##
+
+##This manuscript has been accepted by Social Cognitive and Affective Neuroscience##
 
 Welcome to the GitHub repository for our research project. This repository contains the code and data used in our study.
 
@@ -16,7 +18,7 @@ Script: data_analysis_behavior.R
 ##Hemodynamic Data Analysis##
 
 Data: Folders session 1, session 2, and session 3
-Script: data_analysis_fnirs.m, data_analysis_fnirs_meditation.m (for participants with meditation experiences)
+Script: data_analysis_fnirs.m
 
 - Run in MATLAB (version R2017b) with Homer3 toolboxes (https://doi.org/10.1364/AO.48.00D280).
 - Data info and exclusions: fNIRS_participant_list.xlsx
@@ -40,4 +42,4 @@ Files: SpatialRegistration_BA.txt, SpatialRegistration_MNI.txt
 Toolboxes: SPM8 and NIRS-SPM (MATLAB version R2013b)
 Reference: https://doi.org/10.1016/j.neuroimage.2008.08.036
 
-##Edited on June 21, 2025
+##Edited on July 31, 2025
